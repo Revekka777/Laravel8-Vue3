@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/main', [\App\Http\Controllers\MainController::class, 'index'])->name('main');
+Route::get('/articles', [\App\Http\Controllers\ArticleController::class, 'index'])->name('article.index');
 
 Route::get('/test', [App\Http\Controllers\TestController::class, 'index']);
 
