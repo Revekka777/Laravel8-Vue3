@@ -31,7 +31,6 @@ services:
   db:
     image: mysql:latest
     container_name: 'mysql_blog'
-    restart: always
     tty: true
     environment:
       MYSQL_USER: Revekka
