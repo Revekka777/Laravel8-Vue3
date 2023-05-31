@@ -18,12 +18,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('article-json', [App\Http\Controllers\Api\ArticleController::class,'show']);
+Route::get('article-json', [App\Http\Controllers\Api\ArticleController::class,'show'])->name('api.article.show');
 
-Route::put('article-views-increment', [App\Http\Controllers\Api\ArticleController::class,'viewsIncrement']);
-Route::put('article-likes-increment', [App\Http\Controllers\Api\ArticleController::class,'likesIncrement']);
+Route::put('article-views-increment', [App\Http\Controllers\Api\ArticleController::class,'viewsIncrement'])->name('api.article.views.inc');
+Route::put('article-likes-increment', [App\Http\Controllers\Api\ArticleController::class,'likesIncrement'])->name('api.article.likes.inc');
 
-Route::post('article-add-comment', [App\Http\Controllers\Api\CommentController::class,'store']);
+Route::post('article-add-comment', [App\Http\Controllers\Api\CommentController::class,'store'])->name('api.article.add.comment');
 
 Route::fallback(function (){
     abort(404);

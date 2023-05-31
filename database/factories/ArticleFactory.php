@@ -21,7 +21,7 @@ class ArticleFactory extends Factory
 
         return [
             'title' => $title,
-            'body' => $this->faker->paragraph(100, true),
+            'body' => $this->faker->text(300),
             'slug' => $slug,
             'img' => 'https://via.placeholder.com/600/5F1138/FFFFFF/?text=LARAVEL:8.*',
             'published_at' => Carbon::now(),

@@ -14,9 +14,9 @@ class TagFactory extends Factory
      */
     public function definition()
     {
-        $tag = $this->faker->word;
+        $tag = $this->faker->words(2,true);
         while (Tag::where('label', '=', $tag)->exists()){
-            $tag = $this->faker->word;
+            $tag = $this->faker->words(2,true);
         }
         return [
             'label' => $tag

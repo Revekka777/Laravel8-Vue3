@@ -16,7 +16,6 @@ class ArticleController extends Controller
         $this->service = $service;
     }
 
-
     public function show(Request $request){
         $article = $this->service->getArticleBySlug($request);
         return new ArticleResource($article);
